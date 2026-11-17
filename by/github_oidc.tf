@@ -57,12 +57,15 @@ resource "aws_iam_role_policy" "github_actions" {
         Effect = "Allow"
 
         Action = [
-          "ecr:BatchCheckLayerAvailability",
-          "ecr:CompleteLayerUpload",
-          "ecr:InitiateLayerUpload",
-          "ecr:PutImage",
-          "ecr:UploadLayerPart"
-        ]
+           "ecr:BatchCheckLayerAvailability",
+           "ecr:BatchGetImage",
+           "ecr:CompleteLayerUpload",
+           "ecr:InitiateLayerUpload",
+           "ecr:PutImage",
+           "ecr:UploadLayerPart"
+]
+
+ 
 
         Resource = aws_ecr_repository.app.arn
       },
